@@ -10,11 +10,6 @@ class httpd (
   $httpd_version   = 'latest',
   $service_restart = '/sbin/service httpd reload',
 ) {
-  package {'epel-release':
-    ensure => 'latest',
-    before => Package['httpd'],
-  }
-
   package { 'httpd':
     ensure => $httpd_version,
   }
